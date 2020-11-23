@@ -14,5 +14,6 @@ public class VitoriaSatiro {
         System.out.println("Vitória Luiza Satiro");
         System.out.println("Isadora Donderi");
         System.out.println("Thiago Nelsi do Couto");
+        System.out.println("Samara Caroline Ferreira Melo");
     }
 }
