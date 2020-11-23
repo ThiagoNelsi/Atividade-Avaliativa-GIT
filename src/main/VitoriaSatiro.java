@@ -12,5 +12,6 @@ package main;
 public class VitoriaSatiro {
     public static void main(String[] args) {
         System.out.println("Vitória Luiza Satiro");
+        System.out.println("Isadora Donderi");
     }
 }
