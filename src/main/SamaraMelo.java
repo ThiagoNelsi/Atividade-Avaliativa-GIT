@@ -13,7 +13,8 @@ public class SamaraMelo {
     
       public static void main(String[] args) {
         System.out.println("Samara Caroline Ferreira Melo");
-          System.out.println("Isadora Donderi");
+        System.out.println("Isadora Donderi");
+        System.out.println("Thiago Nelsi do Couto");
     }
     
 }
