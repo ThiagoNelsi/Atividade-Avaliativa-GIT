@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d23c9c20-0c6f-424d-bb79-2180b7b37f01">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     usuario.`idusuario` AS idusuario,
+     usuario.`nome` AS nome,
+     usuario.`idade` AS idade,
+     usuario.`sexo` AS sexo
+FROM
+     `usuario` usuario]]>
+	</queryString>
+	<field name="idusuario" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nome" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="idade" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="sexo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<image>
+				<reportElement x="323" y="0" width="252" height="64" uuid="d915dce3-14f6-44ec-8e78-ca3c7b068a85"/>
+				<imageExpression><![CDATA["leaf_banner_green.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="Title" x="0" y="13" width="312" height="33" uuid="c8259c05-67dd-4fe6-ae25-fffe376fbd56"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Relatório de Usuários]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1" uuid="3710d6eb-ec3a-4d39-bdf7-35ac7e5e7d90"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="19" width="138" height="15" uuid="7e91c2f0-0017-4ffd-9274-226ecb0dd077"/>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="138" y="19" width="138" height="15" uuid="e14c5356-1cbb-46a9-824f-6bc0e5afe215"/>
+				<text><![CDATA[NOME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="276" y="19" width="138" height="15" uuid="8c728576-2bbc-44da-a83c-c406fd97dac4"/>
+				<text><![CDATA[IDADE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="414" y="19" width="138" height="15" uuid="96778d12-09ca-4399-9b00-3344fc647af5"/>
+				<text><![CDATA[SEXO]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="3d3148b1-9dee-41ca-a457-e07eb8ee769e"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement style="Detail" x="0" y="0" width="138" height="15" uuid="86b43ef9-131b-41bd-827e-f6b7793e3e5a"/>
+				<textFieldExpression><![CDATA[$F{idusuario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="138" y="0" width="138" height="15" uuid="1deee46a-ff93-4781-975e-7088c64744c3"/>
+				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="276" y="0" width="138" height="15" uuid="c75e1c9d-579c-42bf-8537-0eec9d46b050"/>
+				<textFieldExpression><![CDATA[$F{idade}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="414" y="0" width="138" height="15" uuid="95efb7b9-e099-4d7a-beae-486d69c61a95"/>
+				<textFieldExpression><![CDATA[$F{sexo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="f99f4081-65d3-41a8-b0a7-5937a34cca7d"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="d3e1823d-ec5e-457b-95e1-0f483f89d5d2"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="f6a79695-0c1c-46e5-8f31-4b226d073b3e"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20" uuid="9dcb0207-6a43-414a-a0fd-fdc48d31f1cd"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
