@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9ebcf3cf-7519-41ea-a013-7b8acb0de35e">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     motorista.`idmotorista` AS idmotorista,
+     motorista.`nome` AS nome,
+     motorista.`sexo` AS sexo,
+     motorista.`carro` AS carro,
+     motorista.`nota` AS nota
+FROM
+     `motorista` motorista]]>
+	</queryString>
+	<field name="idmotorista" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nome" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="sexo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="carro" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nota" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="10" width="477" height="49" uuid="bd5162e1-c465-48da-aa35-82b840339e94"/>
+				<textElement>
+					<font fontName="Constantia" size="36"/>
+				</textElement>
+				<text><![CDATA[Relatório de Motoristas]]></text>
+			</staticText>
+			<image>
+				<reportElement x="373" y="-15" width="141" height="94" uuid="88fb0bec-a789-4e16-9e6d-0adb7445e7ed"/>
+				<imageExpression><![CDATA["C:\\Users\\lipe_\\Downloads\\carro.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="25" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" forecolor="#000099" uuid="591d7248-b1bc-4340-ac5c-7c5adcfa4152"/>
+				<text><![CDATA[Id Motorista]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="0" width="100" height="20" forecolor="#000099" uuid="bfc0c21e-55a2-41ce-b8c7-1c357a029b4d"/>
+				<text><![CDATA[Nome]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="0" width="100" height="20" forecolor="#000099" uuid="a57b2a11-6750-4603-9cd8-3708529d2996"/>
+				<text><![CDATA[Sexo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="302" y="0" width="100" height="20" forecolor="#000099" uuid="573656f4-5e45-4736-beb5-2aed1918ece0"/>
+				<text><![CDATA[Carro]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="402" y="0" width="100" height="20" forecolor="#000099" uuid="c864c35e-cb29-40aa-895e-c0f6ba3f64b7"/>
+				<text><![CDATA[Nota]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="43" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="5256bcc6-251c-406e-ae56-0ec0fe0c45a9"/>
+				<textFieldExpression><![CDATA[$F{idmotorista}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="2" width="100" height="20" uuid="5dd44fb4-4d3a-42c3-91a2-624a96f3b20c"/>
+				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="0" width="100" height="20" uuid="8e4fcba8-e1e7-4fff-8a33-52aa508f4707"/>
+				<textFieldExpression><![CDATA[$F{sexo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="300" y="2" width="100" height="20" uuid="c93f1e04-51ae-4979-9ca6-e22b0989015b"/>
+				<textFieldExpression><![CDATA[$F{carro}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="402" y="2" width="100" height="20" uuid="cc3ee9e1-d85c-4193-8003-316c71cbae15"/>
+				<textFieldExpression><![CDATA[$F{nota}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
