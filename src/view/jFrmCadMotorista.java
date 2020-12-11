@@ -15,7 +15,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author thiag
+ * @author lipe_
  */
 public class jFrmCadMotorista extends JPanel {
     
