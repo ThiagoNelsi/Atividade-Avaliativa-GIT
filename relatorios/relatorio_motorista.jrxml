@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e1939f61-a12f-4370-96ff-d8a36817872c">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     motorista.`idmotorista` AS idmotorista,
+     motorista.`nome` AS nome,
+     motorista.`sexo` AS sexo,
+     motorista.`carro` AS carro,
+     motorista.`nota` AS nota
+FROM
+     `motorista` motorista]]>
+	</queryString>
+	<field name="idmotorista" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nome" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="sexo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="carro" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nota" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="388" height="64" uuid="71085a3f-25b0-4052-86a6-2f7192cd46eb"/>
+				<textElement>
+					<font size="36"/>
+				</textElement>
+				<text><![CDATA[Relatório de Motoristas]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" uuid="116d29fb-4b9c-4bda-8ea2-af31089ef0a3"/>
+				<textElement>
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<text><![CDATA[ID Motorista]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="0" width="100" height="20" uuid="a4a0c563-839f-407e-a753-66989f3c41d2"/>
+				<textElement>
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<text><![CDATA[Nome]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="0" width="100" height="20" uuid="18498c62-3132-41e0-b9b0-562c99ad90d5"/>
+				<textElement>
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<text><![CDATA[Sexo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="0" width="100" height="20" uuid="cb4a5af5-0c15-4f07-b7d1-be1cad345ab0"/>
+				<textElement>
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<text><![CDATA[Carro]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="400" y="0" width="100" height="20" uuid="1e02fa96-6003-411a-8986-09c28fd090de"/>
+				<textElement>
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<text><![CDATA[Nota]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="b7c35130-f8fe-4225-90cb-2ccc7963c1c4"/>
+				<textFieldExpression><![CDATA[$F{idmotorista}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="0" width="100" height="20" uuid="d1525020-cb5c-49dd-8f7d-09b5e14e3981"/>
+				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="0" width="100" height="20" uuid="7fcdc17c-2712-45c6-9cd7-12c532a2a86b"/>
+				<textFieldExpression><![CDATA[$F{sexo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="300" y="0" width="100" height="20" uuid="af3550cf-489d-4e83-a2b0-17d876b07c5e"/>
+				<textFieldExpression><![CDATA[$F{carro}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="400" y="0" width="100" height="20" uuid="62fa4d10-0766-4892-b349-c6c8ed640c03"/>
+				<textFieldExpression><![CDATA[$F{nota}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="372" y="-156" width="158" height="121" uuid="174b218c-d0cb-4c2b-b203-e871b63d43d4"/>
+				<imageExpression><![CDATA["C:\\Users\\Samara_2\\Desktop\\carro.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</detail>
+</jasperReport>
