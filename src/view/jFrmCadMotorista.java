@@ -62,7 +62,6 @@ public class jFrmCadMotorista extends JPanel {
         refreshButton = new javax.swing.JButton();
         newButton = new javax.swing.JButton();
         deleteButton = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
 
         FormListener formListener = new FormListener();
 
@@ -142,15 +141,11 @@ public class jFrmCadMotorista extends JPanel {
 
         deleteButton.addActionListener(formListener);
 
-        jButton1.setText("Relatório");
-        jButton1.addActionListener(formListener);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(newButton)
@@ -159,24 +154,25 @@ public class jFrmCadMotorista extends JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(refreshButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(saveButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1))
+                        .addComponent(saveButton))
                     .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(idmotoristaLabel)
-                            .addComponent(nomeLabel)
-                            .addComponent(sexoLabel)
-                            .addComponent(carroLabel)
-                            .addComponent(notaLabel))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(idmotoristaField)
-                            .addComponent(nomeField)
-                            .addComponent(sexoField)
-                            .addComponent(carroField)
-                            .addComponent(notaField)))
-                    .addComponent(masterScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(idmotoristaLabel)
+                                    .addComponent(nomeLabel)
+                                    .addComponent(sexoLabel)
+                                    .addComponent(carroLabel)
+                                    .addComponent(notaLabel))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(idmotoristaField, javax.swing.GroupLayout.DEFAULT_SIZE, 315, Short.MAX_VALUE)
+                                    .addComponent(nomeField, javax.swing.GroupLayout.DEFAULT_SIZE, 315, Short.MAX_VALUE)
+                                    .addComponent(sexoField, javax.swing.GroupLayout.DEFAULT_SIZE, 315, Short.MAX_VALUE)
+                                    .addComponent(carroField, javax.swing.GroupLayout.DEFAULT_SIZE, 315, Short.MAX_VALUE)
+                                    .addComponent(notaField, javax.swing.GroupLayout.DEFAULT_SIZE, 315, Short.MAX_VALUE)))
+                            .addComponent(masterScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE))))
                 .addContainerGap())
         );
 
@@ -212,8 +208,7 @@ public class jFrmCadMotorista extends JPanel {
                     .addComponent(saveButton)
                     .addComponent(refreshButton)
                     .addComponent(deleteButton)
-                    .addComponent(newButton)
-                    .addComponent(jButton1))
+                    .addComponent(newButton))
                 .addContainerGap())
         );
 
@@ -236,9 +231,6 @@ public class jFrmCadMotorista extends JPanel {
             }
             else if (evt.getSource() == deleteButton) {
                 jFrmCadMotorista.this.deleteButtonActionPerformed(evt);
-            }
-            else if (evt.getSource() == jButton1) {
-                jFrmCadMotorista.this.jButton1ActionPerformed(evt);
             }
         }
     }// </editor-fold>//GEN-END:initComponents
@@ -311,7 +303,6 @@ JRBeanCollectionDataSource dados = new JRBeanCollectionDataSource(list, false);
     private javax.persistence.EntityManager entityManager;
     private javax.swing.JTextField idmotoristaField;
     private javax.swing.JLabel idmotoristaLabel;
-    private javax.swing.JButton jButton1;
     private java.util.List<view.Motorista> list;
     private javax.swing.JScrollPane masterScrollPane;
     private javax.swing.JTable masterTable;
