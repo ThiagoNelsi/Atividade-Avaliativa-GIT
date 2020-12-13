@@ -2,31 +2,10 @@
 
 <Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
   <NonVisualComponents>
-    <Component class="javax.persistence.EntityManager" name="entityManager">
-      <Properties>
-        <Property name="persistenceUnit" type="java.lang.String" value="uber?zeroDateTimeBehavior=convertToNullPU"/>
-      </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="false"/>
-        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="2"/>
-      </AuxValues>
-    </Component>
-    <Component class="javax.persistence.Query" name="query">
-      <Properties>
-        <Property name="query" type="java.lang.String" value="SELECT c FROM Corrida c"/>
-        <Property name="entityManager" type="java.lang.Object" editor="org.netbeans.modules.form.j2ee.J2EEPropertyModifier$EMProperty$EntityManagerEditor">
-          <ComponentRef name="entityManager"/>
-        </Property>
-      </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="false"/>
-        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="2"/>
-      </AuxValues>
-    </Component>
     <Component class="java.util.List" name="list">
       <Properties>
         <Property name="query" type="java.lang.Object" editor="org.netbeans.modules.form.j2ee.J2EEPropertyModifier$QueryBeanProperty$QueryEditor">
-          <ComponentRef name="query"/>
+          <ComponentRef name="default"/>
         </Property>
         <Property name="observable" type="boolean" value="true"/>
       </Properties>
@@ -36,18 +15,10 @@
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="2"/>
       </AuxValues>
     </Component>
-    <Component class="javax.persistence.Query" name="queryUsuario">
-      <Properties>
-        <Property name="query" type="java.lang.String" value="select a from Usuario a"/>
-        <Property name="entityManager" type="java.lang.Object" editor="org.netbeans.modules.form.j2ee.J2EEPropertyModifier$EMProperty$EntityManagerEditor">
-          <ComponentRef name="entityManager"/>
-        </Property>
-      </Properties>
-    </Component>
     <Component class="java.util.List" name="listPaciente">
       <Properties>
         <Property name="query" type="java.lang.Object" editor="org.netbeans.modules.form.j2ee.J2EEPropertyModifier$QueryBeanProperty$QueryEditor">
-          <ComponentRef name="queryUsuario"/>
+          <ComponentRef name="default"/>
         </Property>
         <Property name="observable" type="boolean" value="true"/>
       </Properties>
@@ -55,18 +26,10 @@
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;Usuario&gt;"/>
       </AuxValues>
     </Component>
-    <Component class="javax.persistence.Query" name="motoristaQuery">
-      <Properties>
-        <Property name="query" type="java.lang.String" value="SELECT m FROM Motorista m"/>
-        <Property name="entityManager" type="java.lang.Object" editor="org.netbeans.modules.form.j2ee.J2EEPropertyModifier$EMProperty$EntityManagerEditor">
-          <ComponentRef name="entityManager"/>
-        </Property>
-      </Properties>
-    </Component>
     <Component class="java.util.List" name="motoristaList">
       <Properties>
         <Property name="query" type="java.lang.Object" editor="org.netbeans.modules.form.j2ee.J2EEPropertyModifier$QueryBeanProperty$QueryEditor">
-          <ComponentRef name="motoristaQuery"/>
+          <ComponentRef name="default"/>
         </Property>
       </Properties>
       <AuxValues>
@@ -90,8 +53,12 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="newButton" linkSize="1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="deleteButton" linkSize="1" min="-2" max="-2" attributes="0"/>
@@ -101,30 +68,25 @@
                       <Component id="saveButton" linkSize="1" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="idcorridaLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="origemLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="destinoLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="valorLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="usuarioIdusuarioLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="motoristaIdmotoristaLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="idcorridaField" alignment="0" pref="373" max="32767" attributes="0"/>
-                                  <Component id="origemField" alignment="0" pref="373" max="32767" attributes="0"/>
-                                  <Component id="destinoField" alignment="0" pref="373" max="32767" attributes="0"/>
-                                  <Component id="valorField" alignment="0" pref="373" max="32767" attributes="0"/>
-                                  <Component id="jComboBox1" max="32767" attributes="0"/>
-                                  <Component id="jComboBox2" alignment="1" max="32767" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Component id="masterScrollPane" pref="380" max="32767" attributes="0"/>
+                          <Component id="idcorridaLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="origemLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="destinoLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="valorLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="usuarioIdusuarioLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="motoristaIdmotoristaLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="idcorridaField" alignment="0" pref="373" max="32767" attributes="0"/>
+                          <Component id="origemField" alignment="0" pref="373" max="32767" attributes="0"/>
+                          <Component id="destinoField" alignment="0" pref="373" max="32767" attributes="0"/>
+                          <Component id="valorField" alignment="0" pref="373" max="32767" attributes="0"/>
+                          <Component id="jComboBox1" max="32767" attributes="0"/>
+                          <Component id="jComboBox2" alignment="1" max="32767" attributes="0"/>
                       </Group>
                   </Group>
+                  <Component id="masterScrollPane" pref="380" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -171,6 +133,7 @@
                   <Component id="refreshButton" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="deleteButton" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="newButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" max="-2" attributes="0"/>
           </Group>
@@ -392,6 +355,14 @@
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButton1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jButton1"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

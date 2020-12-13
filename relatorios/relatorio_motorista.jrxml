@@ -103,10 +103,6 @@ FROM
 				<reportElement x="400" y="0" width="100" height="20" uuid="62fa4d10-0766-4892-b349-c6c8ed640c03"/>
 				<textFieldExpression><![CDATA[$F{nota}]]></textFieldExpression>
 			</textField>
-			<image>
-				<reportElement x="372" y="-156" width="158" height="121" uuid="174b218c-d0cb-4c2b-b203-e871b63d43d4"/>
-				<imageExpression><![CDATA["C:\\Users\\Samara_2\\Desktop\\carro.jpg"]]></imageExpression>
-			</image>
 		</band>
 	</detail>
 </jasperReport>
