@@ -395,7 +395,7 @@ public class jFrmCadCorrida extends JPanel {
         (list, false);
         try {
             JasperPrint relatorio = JasperFillManager
-                    .fillReport("./relatorios/relatorio_usuarios.jasper", null, dados);
+                    .fillReport("./relatorios/relatorio_corrida.jasper", null, dados);
             JasperViewer vizualizador = new JasperViewer(relatorio, false);
             vizualizador.setVisible(true);
         } catch (JRException ex) {

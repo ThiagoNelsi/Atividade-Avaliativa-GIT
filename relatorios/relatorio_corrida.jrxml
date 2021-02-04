@@ -13,16 +13,18 @@
 			<style backcolor="#E6DAC3"/>
 		</conditionalStyle>
 	</style>
-	<queryString language="SQL">
+	<queryString>
 		<![CDATA[SELECT
      corrida.`idcorrida` AS idcorrida,
      corrida.`origem` AS origem,
      corrida.`destino` AS destino,
      corrida.`valor` AS valor,
-     corrida.`usuario_idusuario` AS 'corrida.usuario.idusuario',
-     corrida.`motorista_idmotorista` AS 'corrida.motorista.idmotorista'
+     usuario.`nome` AS `usuario.nome`,
+     motorista.`nome` AS `motorista.nome`
 FROM
-     `corrida` corrida]]>
+     `motorista` motorista INNER JOIN `corrida` corrida ON motorista.`idmotorista` = corrida.`motorista_idmotorista`
+     INNER JOIN `usuario` usuario ON corrida.`motorista_idmotorista` = usuario.`idusuario`
+     AND usuario.`idusuario` = corrida.`usuario_idusuario`]]>
 	</queryString>
 	<field name="idcorrida" class="java.lang.Integer">
 		<fieldDescription><![CDATA[]]></fieldDescription>
@@ -36,13 +38,13 @@ FROM
 	<field name="valor" class="java.lang.Float">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="corrida.usuario.idusuario" class="java.lang.Integer"/>
-	<field name="corrida.motorista.idmotorista" class="java.lang.Integer"/>
+	<field name="usuario.nome" class="java.lang.String"/>
+	<field name="motorista.nome" class="java.lang.String"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="136" splitType="Stretch">
+		<band height="108" splitType="Stretch">
 			<staticText>
 				<reportElement style="Title" x="28" y="37" width="268" height="71" uuid="9546f730-cf20-405b-9c27-8fbb229e5328"/>
 				<textElement verticalAlignment="Middle">
@@ -85,11 +87,11 @@ FROM
 			</staticText>
 			<staticText>
 				<reportElement style="Column header" x="368" y="0" width="92" height="15" forecolor="#736343" uuid="2e144c5e-de09-4587-932a-7407debaab78"/>
-				<text><![CDATA[idusuario]]></text>
+				<text><![CDATA[Usuário]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="Column header" x="460" y="0" width="92" height="15" forecolor="#736343" uuid="1bd82942-3796-491b-aab6-db0d2181c3b2"/>
-				<text><![CDATA[idmotorista]]></text>
+				<text><![CDATA[Motorista]]></text>
 			</staticText>
 		</band>
 	</columnHeader>
@@ -115,11 +117,11 @@ FROM
 				</textField>
 				<textField isStretchWithOverflow="true">
 					<reportElement style="Detail" x="368" y="0" width="92" height="15" uuid="babfb61d-5cb3-4539-8fdf-d23457a0cc86"/>
-					<textFieldExpression><![CDATA[$F{corrida.usuario.idusuario}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{usuario.nome}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true">
 					<reportElement style="Detail" x="460" y="0" width="92" height="15" uuid="0c4f1bbc-df2c-4c87-85d7-18c03297abd3"/>
-					<textFieldExpression><![CDATA[$F{corrida.motorista.idmotorista}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{motorista.nome}]]></textFieldExpression>
 				</textField>
 			</frame>
 		</band>
