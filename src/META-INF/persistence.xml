@@ -5,6 +5,7 @@
     <class>view.Usuario</class>
     <class>view.Motorista</class>
     <class>view.Corrida</class>
+    <class>view.User</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/uber?zeroDateTimeBehavior=convertToNull"/>
       <property name="javax.persistence.jdbc.user" value="root"/>

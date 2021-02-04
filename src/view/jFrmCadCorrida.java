@@ -81,7 +81,7 @@ public class jFrmCadCorrida extends JPanel {
 
         FormListener formListener = new FormListener();
 
-        newButton.setText("New");
+        newButton.setText("Novo");
         newButton.addActionListener(formListener);
 
         valorLabel.setText("Valor:");
@@ -117,7 +117,7 @@ public class jFrmCadCorrida extends JPanel {
         jTableBinding.bind();
         masterScrollPane.setViewportView(masterTable);
 
-        jButton1.setText("jButton1");
+        jButton1.setText("Relatório");
         jButton1.addActionListener(formListener);
 
         idcorridaLabel.setText("Idcorrida:");
@@ -143,7 +143,7 @@ public class jFrmCadCorrida extends JPanel {
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), valorField, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
         bindingGroup.addBinding(binding);
 
-        deleteButton.setText("Delete");
+        deleteButton.setText("Deletar");
 
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), deleteButton, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
         bindingGroup.addBinding(binding);
@@ -159,7 +159,7 @@ public class jFrmCadCorrida extends JPanel {
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), jComboBox2, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
         bindingGroup.addBinding(binding);
 
-        saveButton.setText("Save");
+        saveButton.setText("Salvar");
         saveButton.addActionListener(formListener);
 
         usuarioIdusuarioLabel.setText("Usuario:");
@@ -170,7 +170,7 @@ public class jFrmCadCorrida extends JPanel {
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), idcorridaField, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
         bindingGroup.addBinding(binding);
 
-        refreshButton.setText("Refresh");
+        refreshButton.setText("Atualizar");
         refreshButton.addActionListener(formListener);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -316,26 +316,26 @@ public class jFrmCadCorrida extends JPanel {
     private class FormListener implements java.awt.event.ActionListener {
         FormListener() {}
         public void actionPerformed(java.awt.event.ActionEvent evt) {
-            if (evt.getSource() == saveButton) {
+            if (evt.getSource() == newButton) {
+                jFrmCadCorrida.this.newButtonActionPerformed(evt);
+            }
+            else if (evt.getSource() == jButton1) {
+                jFrmCadCorrida.this.jButton1ActionPerformed(evt);
+            }
+            else if (evt.getSource() == deleteButton) {
+                jFrmCadCorrida.this.deleteButtonActionPerformed(evt);
+            }
+            else if (evt.getSource() == saveButton) {
                 jFrmCadCorrida.this.saveButtonActionPerformed(evt);
             }
             else if (evt.getSource() == refreshButton) {
                 jFrmCadCorrida.this.refreshButtonActionPerformed(evt);
             }
-            else if (evt.getSource() == newButton) {
-                jFrmCadCorrida.this.newButtonActionPerformed(evt);
-            }
-            else if (evt.getSource() == deleteButton) {
-                jFrmCadCorrida.this.deleteButtonActionPerformed(evt);
-            }
-            else if (evt.getSource() == jButton1) {
-                jFrmCadCorrida.this.jButton1ActionPerformed(evt);
+            else if (evt.getSource() == jTextField1) {
+                jFrmCadCorrida.this.jTextField1ActionPerformed(evt);
             }
             else if (evt.getSource() == jButton2) {
                 jFrmCadCorrida.this.jButton2ActionPerformed(evt);
-            }
-            else if (evt.getSource() == jTextField1) {
-                jFrmCadCorrida.this.jTextField1ActionPerformed(evt);
             }
         }
     }// </editor-fold>//GEN-END:initComponents
