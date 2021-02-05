@@ -105,7 +105,7 @@
         <Component class="javax.swing.JButton" name="jButton1">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/img lp/check 02.png"/>
+              <Image iconType="3" name="/img/check02.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Entrar"/>
           </Properties>
@@ -116,7 +116,7 @@
         <Component class="javax.swing.JButton" name="jButton2">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/img lp/cancel 01.png"/>
+              <Image iconType="3" name="/img/cancel01.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Cancelar"/>
           </Properties>
@@ -190,7 +190,7 @@
         <Component class="javax.swing.JLabel" name="jLabel5">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/img lp/user03.png"/>
+              <Image iconType="3" name="/img/user03.png"/>
             </Property>
           </Properties>
         </Component>
