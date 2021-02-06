@@ -41,16 +41,21 @@ public class JFrmCadUser extends JPanel {
         list = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : org.jdesktop.observablecollections.ObservableCollections.observableList(query.getResultList());
         masterScrollPane = new javax.swing.JScrollPane();
         masterTable = new javax.swing.JTable();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
         iduserLabel = new javax.swing.JLabel();
-        loginLabel = new javax.swing.JLabel();
-        senhaLabel = new javax.swing.JLabel();
         iduserField = new javax.swing.JTextField();
+        loginLabel = new javax.swing.JLabel();
         loginField = new javax.swing.JTextField();
+        senhaLabel = new javax.swing.JLabel();
         senhaField = new javax.swing.JTextField();
-        saveButton = new javax.swing.JButton();
-        refreshButton = new javax.swing.JButton();
         newButton = new javax.swing.JButton();
         deleteButton = new javax.swing.JButton();
+        refreshButton = new javax.swing.JButton();
+        saveButton = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
 
         FormListener formListener = new FormListener();
 
@@ -68,11 +73,17 @@ public class JFrmCadUser extends JPanel {
 
         masterScrollPane.setViewportView(masterTable);
 
-        iduserLabel.setText("Iduser:");
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
-        loginLabel.setText("Login:");
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/user03.png"))); // NOI18N
 
-        senhaLabel.setText("Senha:");
+        jPanel3.setBackground(new java.awt.Color(204, 204, 204));
+
+        iduserLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        iduserLabel.setText("Iduser");
+
+        iduserField.setText("");
+        iduserField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
         org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement.iduser}"), iduserField, org.jdesktop.beansbinding.BeanProperty.create("text"));
         binding.setSourceUnreadableValue("null");
@@ -82,11 +93,24 @@ public class JFrmCadUser extends JPanel {
 
         iduserField.addActionListener(formListener);
 
+        loginLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        loginLabel.setText("Login");
+
+        loginField.setToolTipText("");
+        loginField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement.login}"), loginField, org.jdesktop.beansbinding.BeanProperty.create("text"));
         binding.setSourceUnreadableValue("null");
         bindingGroup.addBinding(binding);
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), loginField, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
         bindingGroup.addBinding(binding);
+
+        loginField.addActionListener(formListener);
+
+        senhaLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        senhaLabel.setText("Senha");
+
+        senhaField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement.senha}"), senhaField, org.jdesktop.beansbinding.BeanProperty.create("text"));
         binding.setSourceUnreadableValue("null");
@@ -94,15 +118,49 @@ public class JFrmCadUser extends JPanel {
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), senhaField, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
         bindingGroup.addBinding(binding);
 
-        saveButton.setText("Save");
-        saveButton.addActionListener(formListener);
+        senhaField.addActionListener(formListener);
 
-        refreshButton.setText("Refresh");
-        refreshButton.addActionListener(formListener);
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(senhaField)
+                    .addComponent(loginField)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(iduserLabel)
+                            .addComponent(loginLabel)
+                            .addComponent(senhaLabel))
+                        .addGap(0, 392, Short.MAX_VALUE))
+                    .addComponent(iduserField))
+                .addContainerGap())
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(iduserLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(iduserField, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                .addComponent(loginLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(loginField, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16)
+                .addComponent(senhaLabel)
+                .addGap(18, 18, 18)
+                .addComponent(senhaField, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
 
+        newButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/new.png"))); // NOI18N
         newButton.setText("New");
         newButton.addActionListener(formListener);
 
+        deleteButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/iconfinder_icons_delete_1564502.png"))); // NOI18N
         deleteButton.setText("Delete");
 
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), deleteButton, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
@@ -110,65 +168,95 @@ public class JFrmCadUser extends JPanel {
 
         deleteButton.addActionListener(formListener);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+        refreshButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/refresh.png"))); // NOI18N
+        refreshButton.setText("Refresh");
+        refreshButton.addActionListener(formListener);
+
+        saveButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/save.png"))); // NOI18N
+        saveButton.setText("Save");
+        saveButton.addActionListener(formListener);
+
+        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ubif128.png"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(219, 219, 219)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 11, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addComponent(jLabel1)
+                        .addGap(18, 18, 18)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addComponent(newButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(deleteButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(refreshButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(saveButton))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(masterScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                                .addGap(44, 44, 44))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(iduserLabel)
-                                    .addComponent(loginLabel)
-                                    .addComponent(senhaLabel))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(iduserField, javax.swing.GroupLayout.DEFAULT_SIZE, 341, Short.MAX_VALUE)
-                                    .addComponent(loginField, javax.swing.GroupLayout.DEFAULT_SIZE, 341, Short.MAX_VALUE)
-                                    .addComponent(senhaField, javax.swing.GroupLayout.DEFAULT_SIZE, 341, Short.MAX_VALUE))))))
-                .addContainerGap())
+                        .addComponent(saveButton)))
+                .addContainerGap(25, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {deleteButton, newButton, refreshButton, saveButton});
+        jPanel2Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {deleteButton, newButton, refreshButton, saveButton});
 
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(22, 22, 22)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addGap(36, 36, 36)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(refreshButton, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(newButton)
+                    .addComponent(deleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(saveButton))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(1036, 1036, 1036)
+                .addComponent(masterScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 23, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(masterScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 1, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 132, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(iduserLabel)
-                    .addComponent(iduserField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(loginLabel)
-                    .addComponent(loginField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(senhaLabel)
-                    .addComponent(senhaField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(saveButton)
-                    .addComponent(refreshButton)
-                    .addComponent(deleteButton)
-                    .addComponent(newButton))
-                .addContainerGap())
+                .addGap(77, 77, 77)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(8, 8, 8)
+                .addComponent(masterScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(81, Short.MAX_VALUE))
         );
 
         bindingGroup.bind();
@@ -179,7 +267,10 @@ public class JFrmCadUser extends JPanel {
     private class FormListener implements java.awt.event.ActionListener {
         FormListener() {}
         public void actionPerformed(java.awt.event.ActionEvent evt) {
-            if (evt.getSource() == saveButton) {
+            if (evt.getSource() == iduserField) {
+                JFrmCadUser.this.iduserFieldActionPerformed(evt);
+            }
+            else if (evt.getSource() == saveButton) {
                 JFrmCadUser.this.saveButtonActionPerformed(evt);
             }
             else if (evt.getSource() == refreshButton) {
@@ -191,8 +282,11 @@ public class JFrmCadUser extends JPanel {
             else if (evt.getSource() == deleteButton) {
                 JFrmCadUser.this.deleteButtonActionPerformed(evt);
             }
-            else if (evt.getSource() == iduserField) {
-                JFrmCadUser.this.iduserFieldActionPerformed(evt);
+            else if (evt.getSource() == loginField) {
+                JFrmCadUser.this.loginFieldActionPerformed(evt);
+            }
+            else if (evt.getSource() == senhaField) {
+                JFrmCadUser.this.senhaFieldActionPerformed(evt);
             }
         }
     }// </editor-fold>//GEN-END:initComponents
@@ -250,12 +344,25 @@ public class JFrmCadUser extends JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_iduserFieldActionPerformed
 
+    private void loginFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_loginFieldActionPerformed
+
+    private void senhaFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_senhaFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_senhaFieldActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton deleteButton;
     private javax.persistence.EntityManager entityManager;
     private javax.swing.JTextField iduserField;
     private javax.swing.JLabel iduserLabel;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private java.util.List<view.User> list;
     private javax.swing.JTextField loginField;
     private javax.swing.JLabel loginLabel;
