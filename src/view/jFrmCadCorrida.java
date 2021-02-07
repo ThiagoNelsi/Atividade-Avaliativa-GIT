@@ -62,11 +62,11 @@ public class jFrmCadCorrida extends JPanel {
         masterTable = new javax.swing.JTable();
         idcorridaLabel = new javax.swing.JLabel();
         origemLabel = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        jComboBox1 = new javax.swing.JComboBox<String>();
         destinoField = new javax.swing.JTextField();
         valorField = new javax.swing.JTextField();
         motoristaIdmotoristaLabel = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        jComboBox2 = new javax.swing.JComboBox<String>();
         usuarioIdusuarioLabel = new javax.swing.JLabel();
         idcorridaField = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -82,7 +82,6 @@ public class jFrmCadCorrida extends JPanel {
         saveButton = new javax.swing.JButton();
         newButton = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
-        dateCelRender1 = new render.DateCelRender();
 
         FormListener formListener = new FormListener();
 
@@ -124,7 +123,7 @@ public class jFrmCadCorrida extends JPanel {
         jTableBinding.bind();
         masterScrollPane.setViewportView(masterTable);
         if (masterTable.getColumnModel().getColumnCount() > 0) {
-            masterTable.getColumnModel().getColumn(7).setCellRenderer(dateCelRender1);
+            masterTable.getColumnModel().getColumn(7).setCellRenderer(null);
         }
 
         idcorridaLabel.setText("Idcorrida:");
@@ -317,8 +316,6 @@ public class jFrmCadCorrida extends JPanel {
         jButton1.setText("Relatório");
         jButton1.addActionListener(formListener);
 
-        dateCelRender1.setText("dateCelRender1");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -326,20 +323,15 @@ public class jFrmCadCorrida extends JPanel {
             .addComponent(jTabbedPane1)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(newButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(saveButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(refreshButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(deleteButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(dateCelRender1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addComponent(newButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(saveButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(refreshButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(deleteButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -356,9 +348,7 @@ public class jFrmCadCorrida extends JPanel {
                     .addComponent(deleteButton)
                     .addComponent(newButton)
                     .addComponent(jButton1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(dateCelRender1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
 
         bindingGroup.bind();
@@ -371,6 +361,9 @@ public class jFrmCadCorrida extends JPanel {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
             if (evt.getSource() == dataCorrida) {
                 jFrmCadCorrida.this.dataCorridaActionPerformed(evt);
+            }
+            else if (evt.getSource() == jFormattedTextField1) {
+                jFrmCadCorrida.this.jFormattedTextField1ActionPerformed(evt);
             }
             else if (evt.getSource() == jTextField1) {
                 jFrmCadCorrida.this.jTextField1ActionPerformed(evt);
@@ -392,9 +385,6 @@ public class jFrmCadCorrida extends JPanel {
             }
             else if (evt.getSource() == jButton1) {
                 jFrmCadCorrida.this.jButton1ActionPerformed(evt);
-            }
-            else if (evt.getSource() == jFormattedTextField1) {
-                jFrmCadCorrida.this.jFormattedTextField1ActionPerformed(evt);
             }
         }
     }// </editor-fold>//GEN-END:initComponents
@@ -495,7 +485,6 @@ public class jFrmCadCorrida extends JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JFormattedTextField dataCorrida;
-    private render.DateCelRender dateCelRender1;
     private javax.swing.JButton deleteButton;
     private javax.swing.JTextField destinoField;
     private javax.swing.JLabel destinoLabel;
