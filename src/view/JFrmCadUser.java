@@ -82,7 +82,6 @@ public class JFrmCadUser extends JPanel {
         iduserLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         iduserLabel.setText("Iduser");
 
-        iduserField.setText("");
         iduserField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
         org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement.iduser}"), iduserField, org.jdesktop.beansbinding.BeanProperty.create("text"));
@@ -252,11 +251,11 @@ public class JFrmCadUser extends JPanel {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(77, 77, 77)
+                .addContainerGap()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(8, 8, 8)
                 .addComponent(masterScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(81, Short.MAX_VALUE))
+                .addContainerGap(147, Short.MAX_VALUE))
         );
 
         bindingGroup.bind();
@@ -270,11 +269,11 @@ public class JFrmCadUser extends JPanel {
             if (evt.getSource() == iduserField) {
                 JFrmCadUser.this.iduserFieldActionPerformed(evt);
             }
-            else if (evt.getSource() == saveButton) {
-                JFrmCadUser.this.saveButtonActionPerformed(evt);
+            else if (evt.getSource() == loginField) {
+                JFrmCadUser.this.loginFieldActionPerformed(evt);
             }
-            else if (evt.getSource() == refreshButton) {
-                JFrmCadUser.this.refreshButtonActionPerformed(evt);
+            else if (evt.getSource() == senhaField) {
+                JFrmCadUser.this.senhaFieldActionPerformed(evt);
             }
             else if (evt.getSource() == newButton) {
                 JFrmCadUser.this.newButtonActionPerformed(evt);
@@ -282,11 +281,11 @@ public class JFrmCadUser extends JPanel {
             else if (evt.getSource() == deleteButton) {
                 JFrmCadUser.this.deleteButtonActionPerformed(evt);
             }
-            else if (evt.getSource() == loginField) {
-                JFrmCadUser.this.loginFieldActionPerformed(evt);
+            else if (evt.getSource() == refreshButton) {
+                JFrmCadUser.this.refreshButtonActionPerformed(evt);
             }
-            else if (evt.getSource() == senhaField) {
-                JFrmCadUser.this.senhaFieldActionPerformed(evt);
+            else if (evt.getSource() == saveButton) {
+                JFrmCadUser.this.saveButtonActionPerformed(evt);
             }
         }
     }// </editor-fold>//GEN-END:initComponents
