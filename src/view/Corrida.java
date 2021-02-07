@@ -5,6 +5,7 @@
  */
 package view;
 
+import java.util.Date;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 import java.io.Serializable;
@@ -18,6 +19,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 
 /**
@@ -43,6 +46,23 @@ public class Corrida implements Serializable {
     private String destino;
     @Column(name = "valor")
     private float valor;
+    @Column(name="dataCorrida")
+    @Temporal(javax.persistence.TemporalType.DATE)
+    private Date dataCorrida;
+    @Column(name="hora")
+    @Temporal(javax.persistence.TemporalType.TIME)
+    private Date hora;
+
+    public Corrida(Integer idcorrida, String origem, String destino, float valor, Date dataCorrida, Usuario usuario, Motorista motorista, Date hora) {
+        this.idcorrida = idcorrida;
+        this.origem = origem;
+        this.destino = destino;
+        this.valor = valor;
+        this.dataCorrida = dataCorrida;
+        this.hora = hora;
+        this.usuario = usuario;
+        this.motorista = motorista;
+    }
 
     @ManyToOne
     private Usuario usuario;
@@ -125,6 +145,28 @@ public class Corrida implements Serializable {
         this.valor = valor;
         changeSupport.firePropertyChange("valor", oldValor, valor);
     }
+
+    public Date getDataCorrida() {
+        return dataCorrida;
+    }
+
+    public void setDataCorrida(Date dataCorrida) {
+        Date oldDataCorrida = this.dataCorrida;
+        this.dataCorrida = dataCorrida;
+        changeSupport.firePropertyChange("dataCorrida", oldDataCorrida, dataCorrida);
+    }
+
+    public Date getHora() {
+        return hora;
+    }
+
+    public void setHora(Date hora) {
+        Date oldHora = this.hora;
+        this.hora = hora;
+        changeSupport.firePropertyChange("hora", oldHora, hora);
+    }
+    
+    
 
     @Override
     public int hashCode() {
