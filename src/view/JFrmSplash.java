@@ -26,7 +26,7 @@ public class JFrmSplash extends javax.swing.JFrame {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                jProgressBar1.setValue(jProgressBar1.getValue() + 1);
+                jProgressBar1.setValue(jProgressBar1.getValue() + 5);
                 if (jProgressBar1.getValue() >= 100) {
                     timer.stop();
                     JFrmLogin.main(null);
@@ -51,33 +51,16 @@ public class JFrmSplash extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setUndecorated(true);
-
-        jProgressBar1.setValue(100);
+        getContentPane().setLayout(null);
+        getContentPane().add(jProgressBar1);
+        jProgressBar1.setBounds(40, 280, 288, 14);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/SplashUBIF.png"))); // NOI18N
         jLabel1.setText("jLabel1");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(0, -10, 397, 323);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(44, 44, 44)
-                .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(96, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 397, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 150, Short.MAX_VALUE)
-                .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-
-        setSize(new java.awt.Dimension(428, 487));
+        setSize(new java.awt.Dimension(378, 303));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
