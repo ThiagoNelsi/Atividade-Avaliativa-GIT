@@ -338,7 +338,16 @@ public class jFrmCadMotorista extends JPanel {
     }//GEN-LAST:event_idmotoristaFieldActionPerformed
 
 //GEN-FIRST:event_refreshButtonActionPerformed
- 
+    private void refreshButtonActionPerformed(java.awt.event.ActionEvent evt) {
+        entityManager1.getTransaction().rollback();
+        entityManager1.getTransaction().begin();
+        java.util.Collection data = query.getResultList();
+        for (Object entity : data) {
+            entityManager1.refresh(entity);
+        }
+        list.clear();
+        list.addAll(data);
+    }
 //GEN-LAST:event_refreshButtonActionPerformed
 
     private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed

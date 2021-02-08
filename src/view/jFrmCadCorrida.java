@@ -502,12 +502,13 @@ public class jFrmCadCorrida extends JPanel {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(116, 116, 116)
-                .addComponent(masterScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(116, 116, 116)
+                        .addComponent(masterScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -530,7 +531,7 @@ public class jFrmCadCorrida extends JPanel {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 620, Short.MAX_VALUE)
+                .addComponent(jTabbedPane1)
                 .addContainerGap())
         );
 
@@ -542,29 +543,29 @@ public class jFrmCadCorrida extends JPanel {
     private class FormListener implements java.awt.event.ActionListener {
         FormListener() {}
         public void actionPerformed(java.awt.event.ActionEvent evt) {
-            if (evt.getSource() == dataCorrida) {
+            if (evt.getSource() == jButton2) {
+                jFrmCadCorrida.this.jButton2ActionPerformed(evt);
+            }
+            else if (evt.getSource() == jTextField1) {
+                jFrmCadCorrida.this.jTextField1ActionPerformed(evt);
+            }
+            else if (evt.getSource() == dataCorrida) {
                 jFrmCadCorrida.this.dataCorridaActionPerformed(evt);
             }
             else if (evt.getSource() == jFormattedTextField1) {
                 jFrmCadCorrida.this.jFormattedTextField1ActionPerformed(evt);
             }
-            else if (evt.getSource() == jTextField1) {
-                jFrmCadCorrida.this.jTextField1ActionPerformed(evt);
+            else if (evt.getSource() == newButton) {
+                jFrmCadCorrida.this.newButtonActionPerformed(evt);
             }
-            else if (evt.getSource() == jButton2) {
-                jFrmCadCorrida.this.jButton2ActionPerformed(evt);
+            else if (evt.getSource() == saveButton) {
+                jFrmCadCorrida.this.saveButtonActionPerformed(evt);
             }
             else if (evt.getSource() == refreshButton) {
                 jFrmCadCorrida.this.refreshButtonActionPerformed(evt);
             }
             else if (evt.getSource() == deleteButton) {
                 jFrmCadCorrida.this.deleteButtonActionPerformed(evt);
-            }
-            else if (evt.getSource() == saveButton) {
-                jFrmCadCorrida.this.saveButtonActionPerformed(evt);
-            }
-            else if (evt.getSource() == newButton) {
-                jFrmCadCorrida.this.newButtonActionPerformed(evt);
             }
             else if (evt.getSource() == jButton1) {
                 jFrmCadCorrida.this.jButton1ActionPerformed(evt);
