@@ -1,0 +1,20 @@
+Nota Bimestral: 8.7 pontos
+===========================================================
+As tabelas dos formulários foram escondidas, com isso não é possível fazer a atualização (edição) de registros.
+Para deixar oculta as tabelas era necessário criar uma barra de navegação
+
+Formulário de agendar corrida possui um painel tabulado. Esses paineis não possuem rótulos (texto padrão tab2, tab1) Isso dificulta a utilização pelo usuário.
+Seria melhor se a tab1 realmente fosse a primeira a ser apresentada, pois o cadastro está nela.
+
+O renderizador foi criado, mas não foi utilizado, visto que as tabelas estavam ocultas.
+
+Formulário Principal: O menu de relatórios não exibe outros formulários ou relatórios, está sem ação.
+Relatórios:
+Wizard: Ok
+Blank: Ok
+Duas tabelas: ok
+Por parâmetro: Ok, mas a escolha do parâmetro id não foi uma boa opção seria melhor pelo nome do motorista ou do cliente. Além disso, a consulta poderia utilizar o operador = ao invés do like.
+
+
+
+
